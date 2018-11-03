@@ -306,6 +306,9 @@ OlivineCityBattleTowerSignText_NotYetOpen:
 OlivineCityHiddenSoftSand:
 	hiddenitem SOFT_SAND, EVENT_OLIVINE_CITY_HIDDEN_SOFT_SAND
 
+OlivineCityIron:
+  itemball IRON
+
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -342,3 +345,4 @@ OlivineCity_MapEvents:
 	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 10, 11, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
 	object_event 16, 13, SPRITE_SCIENTIST, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityScientistScript, EVENT_BEAT_PRYCE
+	object_event 37,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineCityIron, EVENT_OLIVINE_CITY_IRON

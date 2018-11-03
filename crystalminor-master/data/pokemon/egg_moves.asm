@@ -214,7 +214,7 @@ AbraEggMoves:
 
 MachopEggMoves:
 	db LIGHT_SCREEN
-	db MEDITATE
+	db COUNTER
 	db ROLLING_KICK
 	db ENCORE
 	db -1 ; end
@@ -730,7 +730,7 @@ TeddiursaEggMoves:
 	db CRUNCH
 	db TAKE_DOWN
 	db SEISMIC_TOSS
-	db FOCUS_ENERGY
+	db CROSS_CHOP
 	db COUNTER
 if _CRYSTAL
 	db METAL_CLAW

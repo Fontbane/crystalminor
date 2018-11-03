@@ -90,6 +90,17 @@ RuinsOfAlphResearchCenterScientist1Script:
 .UnownAppeared:
 	writetext RuinsOfAlphResearchCenterScientist1Text_UnownAppeared
 	waitbutton
+	checkevent EVENT_GOT_EXP_SHARE_FROM_SCIENTIST
+	buttonsound
+	verbosegiveitem EXP_SHARE
+	iffalse .BagFull
+	setevent EVENT_GOT_EXP_SHARE_FROM_SCIENTIST
+.GotExpShare:
+	writetext RuinsOfAlphResearchCenterScientist1Text_GotExpShare
+	waitbutton
+.BagFull:
+	closetext
+	end
 	closetext
 	end
 
@@ -260,6 +271,20 @@ RuinsOfAlphResearchCenterScientist1Text_UnownAppeared:
 
 	para "We'll need to"
 	line "investigate this."
+
+	para "Please, take this"
+	line "device as thanks."
+	done
+
+RuinsOfAlphResearchCenterScientist1Text_GotExpShare:
+  text "#MON appeared"
+  line "in the RUINS?"
+
+  para "That's incredible"
+  line "news!"
+
+  para "We'll need to"
+  line "investigate this."
 	done
 
 RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:

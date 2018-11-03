@@ -22,7 +22,7 @@ MysteryGiftItems:
 	db SUPER_REPEL
 	db MAX_REPEL
 	db ELIXER
-	db ETHER
+	db EXP_SHARE
 	db WATER_STONE
 	db FIRE_STONE
 	db LEAF_STONE
