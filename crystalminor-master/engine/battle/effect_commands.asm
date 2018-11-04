@@ -15,7 +15,7 @@ DoEnemyTurn:
 	jr z, DoTurn
 
 	ld a, [wBattleAction]
-	cp BATTLEACTION_E
+	cp BATTLEACTION_STRUGGLE
 	jr z, DoTurn
 	cp BATTLEACTION_SWITCH1
 	ret nc
@@ -1257,6 +1257,12 @@ BattleCommand_Stab:
 	pop bc
 	pop de
 	pop hl
+
+	push de
+	push bc
+	farcall DoBadgeTypeBoosts
+	pop bc
+	pop de
 
 	ld a, [wCurType]
 	cp b

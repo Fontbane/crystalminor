@@ -141,7 +141,7 @@ wAutoInputAddress:: dw ; c2c8
 wAutoInputBank::    db ; c2ca
 wAutoInputLength::  db ; c2cb
 
-wMonStatusFlags:: db
+wDebugFlags:: db
 wGameLogicPaused:: db ; c2cd
 wSpriteUpdatesEnabled:: db
 
@@ -2004,7 +2004,7 @@ wPlayerStepDirection::  ; d151
 wBGMapAnchor:: dw ; d152
 
 UNION ; d154
-wUsedSprites:: ds 64
+wUsedSprites:: ds SPRITE_GFX_LIST_CAPACITY * 2
 wUsedSpritesEnd::
 
 NEXTU ; d154

@@ -1,6 +1,11 @@
 ; wInputType:: ; c2c7
 AUTO_INPUT EQU $ff
 
+; wDebugFlags:: ; c2cc
+	const_def
+	const DEBUG_BATTLE_F
+	const DEBUG_FIELD_F
+
 ; wCurDexMode:: ; c7d4
 	const_def
 	const DEXMODE_NEW
@@ -146,7 +151,7 @@ SPAWN_RED   EQU 2
 
 ; wMapObjects:: ; d71e
 PLAYER_OBJECT EQU 0
-NUM_OBJECTS   EQU $10
+NUM_OBJECTS   EQU 16
 
 ; wStatusFlags:: ; d84c
 	const_def

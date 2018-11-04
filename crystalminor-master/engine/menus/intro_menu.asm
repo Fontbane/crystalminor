@@ -60,7 +60,7 @@ OptionsMenu:
 
 NewGame:
 	xor a
-	ld [wMonStatusFlags], a
+	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
 	call AreYouABoyOrAreYouAGirl
@@ -747,7 +747,7 @@ NamePlayer:
 	ret
 
 .NewName:
-	ld b, 1
+	ld b, NAME_PLAYER
 	ld de, wPlayerName
 	farcall NamingScreen
 

@@ -36,7 +36,7 @@ LoadSGBLayoutCGB:
 	dw _CGB_StatsScreenHPPals
 	dw _CGB_Pokedex
 	dw _CGB_SlotMachine
-	dw _CGB06
+	dw _CGB_BetaTitleScreen
 	dw _CGB_GSIntro
 	dw _CGB_Diploma
 	dw _CGB_MapPals
@@ -47,9 +47,9 @@ LoadSGBLayoutCGB:
 	dw _CGB_MoveList
 	dw _CGB_BetaPikachuMinigame
 	dw _CGB_PokedexSearchOption
-	dw _CGB11
+	dw _CGB_BetaPoker
 	dw _CGB_Pokepic
-	dw _CGB13
+	dw _CGB_MagnetTrain
 	dw _CGB_PackPals
 	dw _CGB_TrainerCard
 	dw _CGB_PokedexUnownMode
@@ -419,8 +419,8 @@ _CGB_SlotMachine:
 	ldh [hCGBPalUpdate], a
 	ret
 
-_CGB06:
-	ld hl, PalPacket_SCGB_06 + 1
+_CGB_BetaTitleScreen:
+	ld hl, PalPacket_BetaTitleScreen + 1
 	call CopyFourPalettes
 	call WipeAttrMap
 	ld de, wOBPals1
@@ -504,7 +504,7 @@ _CGB_GSIntro:
 	call WipeAttrMap
 	ret
 
-_CGB11:
+_CGB_BetaPoker:
 	ld hl, BetaPokerPals
 	ld de, wBGPals1
 	ld bc, 5 palettes
@@ -677,32 +677,32 @@ _CGB_TrainerCard:
 	; top-right corner still uses the border's palette
 	hlcoord 18, 1, wAttrMap
 	ld [hl], $1
-	hlcoord 3, 10, wAttrMap
-	lb bc, 3, 3 ; edited to show full head of leader
+	hlcoord 2, 11, wAttrMap
+	lb bc, 2, 4
 	ld a, $1 ; falkner
 	call FillBoxCGB
-	hlcoord 7, 10, wAttrMap
-	lb bc, 3, 3 ; JPN version does 2, 4 to show name at top of head
+	hlcoord 6, 11, wAttrMap
+	lb bc, 2, 4
 	ld a, $2 ; bugsy
 	call FillBoxCGB
-	hlcoord 11, 10, wAttrMap
-	lb bc, 3, 3 ; names don't fit in ENG version
+	hlcoord 10, 11, wAttrMap
+	lb bc, 2, 4
 	ld a, $3 ; whitney
 	call FillBoxCGB
-	hlcoord 15, 10, wAttrMap
-	lb bc, 3, 3
+	hlcoord 14, 11, wAttrMap
+	lb bc, 2, 4
 	ld a, $4 ; morty
 	call FillBoxCGB
-	hlcoord 3, 13, wAttrMap
-	lb bc, 3, 3
+	hlcoord 2, 14, wAttrMap
+	lb bc, 2, 4
 	ld a, $5 ; chuck
 	call FillBoxCGB
-	hlcoord 7, 13, wAttrMap
-	lb bc, 3, 3
+	hlcoord 6, 14, wAttrMap
+	lb bc, 2, 4
 	ld a, $6 ; jasmine
 	call FillBoxCGB
-	hlcoord 11, 13, wAttrMap
-	lb bc, 3, 3
+	hlcoord 10, 14, wAttrMap
+	lb bc, 2, 4
 	ld a, $7 ; pryce
 	call FillBoxCGB
 	; clair uses kris's palette
@@ -710,8 +710,8 @@ _CGB_TrainerCard:
 	and a
 	push af
 	jr z, .got_gender3
-	hlcoord 15, 13, wAttrMap
-	lb bc, 3, 3
+	hlcoord 14, 14, wAttrMap
+	lb bc, 2, 4
 	ld a, $1
 	call FillBoxCGB
 .got_gender3
@@ -863,8 +863,8 @@ _CGB_Pokepic:
 	call ApplyAttrMap
 	ret
 
-_CGB13:
-	ld hl, PalPacket_SCGB_13 + 1
+_CGB_MagnetTrain:
+	ld hl, PalPacket_MagnetTrain + 1
 	call CopyFourPalettes
 	call WipeAttrMap
 	hlcoord 0, 4, wAttrMap
@@ -883,7 +883,7 @@ _CGB13:
 
 _CGB_GamefreakLogo:
 	ld de, wBGPals1
-	ld a, PREDEFPAL_GAMEFREAK_LOGO
+	ld a, PREDEFPAL_GAMEFREAK_LOGO_BG
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
 	ld hl, .Palette

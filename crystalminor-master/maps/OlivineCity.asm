@@ -329,7 +329,7 @@ OlivineCity_MapEvents:
 	coord_event 13, 12, SCENE_DEFAULT, OlivineCityRivalSceneTop
 	coord_event 13, 13, SCENE_DEFAULT, OlivineCityRivalSceneBottom
 
-	db 7 ; bg events
+	db 8 ; bg events
 	bg_event 16, 12, BGEVENT_READ, OlivineCitySign
 	bg_event 20, 24, BGEVENT_READ, OlivineCityPortSign
 	bg_event  7, 11, BGEVENT_READ, OlivineGymSign
@@ -337,9 +337,9 @@ OlivineCity_MapEvents:
 	bg_event  3, 23, BGEVENT_READ, OlivineCityBattleTowerSign
 	bg_event 14, 21, BGEVENT_READ, OlivineCityPokecenterSign
 	bg_event 20, 17, BGEVENT_READ, OlivineCityMartSign
-	bg event 15, 13, BGEVENT_READ, OlivineCityHiddenSoftSand
+	bg_event 15, 13, BGEVENT_READ, OlivineCityHiddenSoftSand
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event 26, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
 	object_event 20, 13, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
