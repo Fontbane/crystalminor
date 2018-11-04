@@ -1,6 +1,6 @@
-# Pokémon Crystal [![Build Status][travis-badge]][travis]
+# Pokémon Crystal Minor [![Build Status][travis-badge]][travis]
 
-This is a disassembly of Pokémon Crystal.
+This is a modified disassembly of Pokémon Crystal. The rest of this Readme is the same one that comes with pokecrystal itself.
 
 It builds the following ROMs:
 
